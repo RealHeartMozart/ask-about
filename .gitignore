@@ -163,3 +163,5 @@ cython_debug/
 
 # This Project
 text
+Selenium.Web*
+.temp
