@@ -8,13 +8,15 @@ from bs4 import BeautifulSoup
 import time
 import os
 
-logging.basicConfig(level=logging.DEBUG)
+# Configure logging to display debug messages
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class PageLoader:
     def __init__(self, driver_path):
         self.driver_path = driver_path
         self.options = webdriver.ChromeOptions()
-        self.options.add_argument('--headless')  # Run in headless mode
+        # self.options.add_argument('--headless')  # Run in headless mode
+        self.options.add_argument('--port=0')  # Use a random port
 
     def get_text_and_source_from_page(self, url):
         logging.debug("Entering get_text_and_source_from_page method")
